@@ -93,12 +93,12 @@ public class ContactList {
         
         try {
             Files.write(
-                    Paths.get(System.getProperty("user.dir") + "\\" +  CONTACTS_FILE_PATH), 
+                    Paths.get(System.getProperty("user.dir") + "//" + CONTACTS_FILE_PATH), 
                     (newContact.getName() + "," + newContact.getPhoneNumber()).getBytes(),
                     StandardOpenOption.APPEND
             );
         } catch (IOException e) {
-            System.out.println("Falha ao escrever uma nova linha no arquivo.");
+            System.out.println(e);
         }
     }
         
